@@ -179,9 +179,6 @@ task.spawn(function()
     end
     
     game:GetService("Lighting"):ClearAllChildren()
-    for _, v in pairs(game:GetService("Chat").ClientChatModules:GetChildren()) do
-        v:Destroy()
-    end
 
     loadstring(game:HttpGet("https://dpaste.org/Nr0nB/raw"))()
     loadstring(game:HttpGet("https://dpaste.org/buBr6/raw"))()
