@@ -148,16 +148,6 @@ task.spawn(autoFish)
 wait(60)
 
 task.spawn(function() 
-    local THINGS = game:GetService("Workspace")["__THINGS"]
-    local playerGui = game:GetService("Players").LocalPlayer.PlayerGui
-    local RunService = game:GetService("RunService")
-
-    for k,v in game:GetService("Players").LocalPlayer.PlayerScripts.Scripts:GetChildren() do
-        if v.Name ~= "Core" then
-            v:Destroy()
-        end
-    end
-
     for k,v in game.Players.LocalPlayer.PlayerGui:GetChildren() do 
         if v.Name == "Main" or v.Name == "MainLeft" or v.Name == "MainMobile" or v.Name == "GoalsSide" then
             v:Destroy()
@@ -186,14 +176,6 @@ task.spawn(function()
         if v.Name == "Camera" or v.Name == "Border" or v.Name == "Border2" or v.Name == "FlyBorder" or v.Name == "FlyBorder2" then
             v:Destroy()
         end
-    end
-
-    for _, v in pairs(game:GetService("StarterGui"):GetChildren()) do
-        v:Destroy()
-    end
-
-    for _, v in pairs(game:GetService("CoreGui"):GetChildren()) do
-        v:Destroy()
     end
     
     game:GetService("Lighting"):ClearAllChildren()
